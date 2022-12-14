@@ -3,10 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import Profile from './Screens/MyProfile.js'
 import Navigator from './Routes'
 import { GlobalVariableProvider } from './config/GlobalVariableContext';
+import MeetYourConveyancer from './Screens/MeetYourConveyancer.js';
+import DepositePaid from './Screens/DepositePaid.js';
+
 export default function App() {
   return (
 
-    // <Profile/>
     <GlobalVariableProvider>
       <Navigator />
     </GlobalVariableProvider>

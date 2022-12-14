@@ -6,17 +6,28 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import Iconfa from 'react-native-vector-icons/FontAwesome'
 import Topbar from '../Components/Topbar.js'
 import Homee from '../Components/Homeoption'
-
+import PropertyUnderOffer from './PropertyUnderOffer.js';
 
 
 const PathwaySteps = ({ navigation }) => {
 
     const back = () => {
-        navigation.push('Login')
+        navigation.push('Myproperty')
     }
 
+    const Propertyoffer = () => {
+        navigation.push('PropertyUnderOffer')
+    }
+
+    const MeetYourConveyancer = () => {
+        navigation.push('MeetYourConveyancer')
+    }
+
+    const DepositePaid = () => {
+        navigation.push('DepositePaid')
+    }
     return (
-        <View style={{ height: '100%' }}>
+        <View style={{ height: '100%', backgroundColor: 'white' }}>
 
             <Topbar title={"Pathway Steps"} mb={40} onPress={back} />
             <View style={styles.profilecontainer}>
@@ -57,7 +68,7 @@ const PathwaySteps = ({ navigation }) => {
 
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={Propertyoffer}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
@@ -69,7 +80,7 @@ const PathwaySteps = ({ navigation }) => {
                 </View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={MeetYourConveyancer}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
@@ -81,7 +92,7 @@ const PathwaySteps = ({ navigation }) => {
                 </View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={DepositePaid}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>

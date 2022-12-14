@@ -1,36 +1,31 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView, ImageBackground } from "react-native";
+import { StyleSheet, View, Text, Image, ScrollView, ImageBackground, TouchableOpacity } from "react-native";
+
 
 const MyPropertyComponent = (props) => {
     return (
-        <View >
-            <View style={styles.MainContainer}>
-                <View style={styles.TextContainer}>
-                    <Text>{props.Text1}</Text>
-                    <Text style={styles.Text5}>{props.Text2}</Text>
-                </View>
-                <View style={styles.Box1}>
-                    <View style={styles.Box}>
-                        <View style={styles.Box4}>
-                            <Image source={require('../images/Artboard1.png')} style={styles.img} /></View>
-                        <View></View><Text style={styles.BoxText}>{props.BoxText}</Text>
 
-                    </View>
-                </View>
+
+
+
+        <TouchableOpacity onPress={props.value}><View style={styles.Box1}>
+            <View style={styles.Box}>
+                <View style={styles.Box4}>
+                    <Image source={require('../images/Artboard1.png')} style={styles.img} /></View>
+                <Text style={styles.BoxText}>{props.BoxText}</Text>
             </View>
+        </View></TouchableOpacity>
 
 
-        </View>
+
+
     )
 
 };
 
 
 const styles = StyleSheet.create({
-    MainContainer: {
-        top: 10,
-        marginBottom: 40
-    },
+
     TextContainer: {
         flexDirection: 'row',
         left: 23,
@@ -42,12 +37,16 @@ const styles = StyleSheet.create({
     Box1: {
         height: 120,
         backgroundColor: 'white',
-        elevation: 10,
-        top: 32,
+        borderBottomWidth: 0.3,
+        borderLeftWidth: 0.1,
+        borderRightWidth: 0.1,
+        borderTopWidth: 0.1,
+
+        top: 46,
         marginHorizontal: 20,
         justifyContent: 'center',
         borderRadius: 10,
-
+        marginBottom: 32,
     },
     Box: {
         flexDirection: "row",

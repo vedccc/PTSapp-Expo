@@ -11,6 +11,10 @@ import Currentsettlement from './Screens/Currentsettlement';
 import Glossary from './Screens/Glossaryscreen';
 import Myproperty from './Screens/Mypropertypassportscreen'
 import Deposit from './Screens/MySafeDepositbox'
+import PathwaySteps from './Screens/PathwaySteps.js';
+import PropertyUnderOffer from './Screens/PropertyUnderOffer.js';
+import MeetYourConveyancer from './Screens/MeetYourConveyancer.js';
+import DepositePaid from './Screens/DepositePaid.js';
 
 // const Drawer = createDrawerNavigator();
 // const NavigationDrawer = () => (
@@ -80,7 +84,30 @@ const screens = {
       header: null,
     }
   },
-
+  DepositePaid: {
+    screen: DepositePaid,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  PathwaySteps: {
+    screen: PathwaySteps,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  PropertyUnderOffer: {
+    screen: PropertyUnderOffer,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  MeetYourConveyancer: {
+    screen: MeetYourConveyancer,
+    navigationOptions: {
+      header: null,
+    }
+  },
   Deposit: {
     screen: Deposit,
     navigationOptions: {
