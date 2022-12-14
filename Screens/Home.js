@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Node } from 'react';
 import {
     SafeAreaView,
@@ -22,6 +22,8 @@ import {
     TouchableOpacity,
     TextInput
 } from 'react-native';
+import * as DataCoreApi from '../apis/DataCoreApi.js';
+import * as GlobalVariables from '../config/GlobalVariableContext';
 
 import Icon from 'react-native-vector-icons/AntDesign'
 import Iconfa from 'react-native-vector-icons/FontAwesome'
@@ -34,8 +36,23 @@ import Homee from '../Components/Homeoption'
 
 
 
-const App: () => Node = ({ navigation }) => {
+const App: () => Node = (props) => {
 
+    const Constants = GlobalVariables.useValues();
+    const SetGlobalVariable = GlobalVariables.useSetValue();
+
+
+    const { navigation } = props;
+
+    useEffect(() => {
+        DataCoreApi.getLatestSettlements(Constants);
+        DataCoreApi.getLatestMatterDetails(Constants);
+
+    }, []);
+
+    useEffect(() => {
+        GlobalVariables.checkApiChanged(Constants, SetGlobalVariable);
+    }, []);
 
     const pressHandler = () => {
         navigation.push('Currentsettlement')
@@ -67,16 +84,22 @@ const App: () => Node = ({ navigation }) => {
 
 
             <Topbar title={"Home"} mb={40} onPress={back} />
-            <View style={styles.profilecontainer}>
-                <TouchableOpacity >
-                    <View style={styles.subprofilecontainer}>
-                        <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
-                        <Text style={styles.profiletitle1}>Welcome</Text>
-                        <Text style={styles.profiletitle2}>Vedant chellani</Text>
+            <View style={styles.Bluecontainer}>
+                <View style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
+                    <View style={{ width: "90%", height: "80%", flexDirection: "row", }}>
+                        <View>
+                            <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
+                        </View>
+                        <View style={{ alignSelf: "center", left: 5 }}>
+                            <Text style={styles.profiletitle1}>Welcome</Text>
+                            <Text style={styles.profiletitle2}> {Constants['USER_FULL_NAME']}</Text>
+                        </View>
                     </View>
-                </TouchableOpacity>
-                <Image source={require('../images/LogoLight.png')} style={styles.logo1} />
-            </View>
+                </View>
+                <View style={{ width: "50%", justifyContent: "center" }}>
+                    <Image source={require('../images/LogoLight.png')} style={styles.logo1} />
+                </View>
+            </View >
 
 
             <View style={styles.pinkcontainer}>
@@ -141,7 +164,7 @@ const App: () => Node = ({ navigation }) => {
 
 
             </View>
-        </ScrollView>
+        </ScrollView >
 
 
 
@@ -152,53 +175,52 @@ const App: () => Node = ({ navigation }) => {
 
 
 const styles = StyleSheet.create({
-    profilecontainer: {
+    Bluecontainer: {
         backgroundColor: "#133459",
         height: 80,
-        justifyContent: "flex-start"
+        flexDirection: "row"
+
     },
 
     subprofilecontainer: {
         width: 180,
         height: 60,
-        position: "absolute",
-        left: 20,
-        top: 6
+        flexDirection: "row",
+        justifyContent: "center"
     },
     profileimg: {
         resizeMode: 'stretch',
         height: 50,
         width: 50,
         borderRadius: 40,
-        position: "absolute",
+
         top: 5
     },
 
     profiletitle1: {
-        alignSelf: "center",
+
         fontSize: 13,
-        position: "absolute",
-        right: 68,
-        top: 12,
-        color: "white"
+        color: "white",
+        top: 1,
+
+
     },
 
     profiletitle2: {
-        alignSelf: "flex-end",
+
         fontSize: 16,
-        position: "absolute",
-        top: 30,
-        right: 14,
-        color: "white"
+        color: "white",
+        left: -4
+
     },
 
     logo1: {
         resizeMode: 'stretch',
-        height: "40%",
-        width: "42%",
-        alignSelf: "flex-end",
-        top: 20,
-        right: "2%"
+        height: 30,
+        width: 160,
+        alignSelf: "center"
+
+
     },
 
     pinkcontainer: {
