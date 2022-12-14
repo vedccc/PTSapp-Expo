@@ -11,6 +11,14 @@ import Currentsettlement from './Screens/Currentsettlement';
 import Glossary from './Screens/Glossaryscreen';
 import Myproperty from './Screens/Mypropertypassportscreen'
 import Deposit from './Screens/MySafeDepositbox'
+
+// const Drawer = createDrawerNavigator();
+// const NavigationDrawer = () => (
+//   <Drawer.Navigator drawerContent={(props) => <Deposit {...props} />}>
+//     <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+//   </Drawer.Navigator>
+// );
+
 const screens = {
 
   Welcome: {

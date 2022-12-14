@@ -200,7 +200,7 @@ export function GlobalVariableProvider({ children }) {
   // We won't want an app to read a default state when there might be one
   // incoming from storage.
   if (!state.__loaded) {
-    return <AppLoading />;
+    return
   }
 
   return (
