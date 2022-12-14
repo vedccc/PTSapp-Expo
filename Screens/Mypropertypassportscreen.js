@@ -30,16 +30,17 @@ import Iconfa from 'react-native-vector-icons/FontAwesome'
 import Topbar from '../Components/Topbar.js'
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
+import MyPropertyComponent from '../Components/MyPropertyPassport.js';
 
-const App: () => Node = ({navigation}) => {
+const App: () => Node = ({ navigation }) => {
   const back = () => {
     navigation.push('Home')
-}
+  }
   return (
 
-    <View>
+    <View style={{ height: '100%' }}>
 
-      <Topbar title={"My Property Passport "} mb={40} onPress={back}/>
+      <Topbar title={"My Property Passport "} mb={40} onPress={back} />
       <View style={styles.profilecontainer}>
 
         <TouchableOpacity >
@@ -51,35 +52,36 @@ const App: () => Node = ({navigation}) => {
         </TouchableOpacity>
 
       </View>
-      <View>
-        <View style={styles.txt1Container} >
-          <Text style={styles.txt1}>Properties i have</Text>
-          <Text style={{ fontWeight: "bold" }}> Purchased</Text>
-        </View>
+      <ScrollView style={{ height: 1500 }}>
+        <MyPropertyComponent
+          Text1={'Properties i have '}
+          Text2={'Purchased'}
+          BoxText={'Buyer Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
+        />
 
-        <View style={styles.RedtxtContainer} >
-          <Text style={styles.txt2}>No Properties Found</Text>
-        </View>
+        <MyPropertyComponent
+          Text1={undefined}
+          Text2={undefined}
+          BoxText={'7 George Street north    Strathfield, NSW2137       Australia  VacantLand'}
+        />
 
-        <View style={styles.txt1Container} >
-          <Text style={styles.txt1}>Properties i have</Text>
-          <Text style={{ fontWeight: "bold" }}> Sold</Text>
-        </View>
+        <MyPropertyComponent
+          Text1={'Properties i have '}
+          Text2={'sold'}
+          BoxText={'Seller Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
+        />
 
-        <View style={styles.RedtxtContainer} >
-          <Text style={styles.txt2}>No Properties Found</Text>
-        </View>
+        <MyPropertyComponent
+          Text1={'Properties i have '}
+          Text2={'Watched'}
+          BoxText={'BuyerAgent Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
+        />
 
-        <View style={styles.txt1Container} >
-          <Text style={styles.txt1}>Properties i have</Text>
-          <Text style={{ fontWeight: "bold" }}> Watched</Text>
-        </View>
+        <MyPropertyComponent
+          BoxText={'BuyerAgent Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
+        />
 
-        <View style={styles.RedtxtContainer} >
-          <Text style={styles.txt2}>No Properties Found</Text>
-        </View>
-      </View>
-
+      </ScrollView>
     </View>
 
   );
