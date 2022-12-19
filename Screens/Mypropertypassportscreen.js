@@ -22,7 +22,7 @@ import {
   TouchableOpacity,
   TextInput
 } from 'react-native';
-
+import * as GlobalVariables from '../config/GlobalVariableContext';
 import Icon from 'react-native-vector-icons/AntDesign'
 import Iconfa from 'react-native-vector-icons/FontAwesome'
 
@@ -41,6 +41,7 @@ const App: () => Node = ({ navigation }) => {
   const PathwayStepsScreen = () => {
     navigation.push('PathwaySteps')
   }
+  const Constants = GlobalVariables.useValues();
 
   return (
 
@@ -51,12 +52,18 @@ const App: () => Node = ({ navigation }) => {
 
       <ScrollView>
         <View style={styles.profilecontainer}>
-          <TouchableOpacity >
-            <View style={styles.subprofilecontainer}>
-              <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
-              <Text style={styles.profiletitle1}>Welcome</Text>
-              <Text style={styles.profiletitle2}>Vedant chellani</Text>
+          <TouchableOpacity style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
+
+            <View style={{ width: "90%", height: "80%", flexDirection: "row", }}>
+              <View>
+                <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
+              </View>
+              <View style={{ alignSelf: "center", left: 5 }}>
+                <Text style={styles.profiletitle1}>Welcome</Text>
+                <Text style={styles.profiletitle2}> {Constants['USER_FULL_NAME']}</Text>
+              </View>
             </View>
+
           </TouchableOpacity>
 
         </View>
@@ -145,8 +152,13 @@ const styles = StyleSheet.create({
 
   profilecontainer: {
     backgroundColor: "#133459",
+<<<<<<< HEAD
     height: 90,
     justifyContent: "flex-start"
+=======
+    height: 80,
+    flexDirection: "row"
+>>>>>>> b644cdafa9fe66eb4cc8d8fe94c455bdd47961f9
   },
 
   subprofilecontainer: {
@@ -161,26 +173,23 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 40,
-    position: "absolute",
+
     top: 5
   },
 
   profiletitle1: {
-    alignSelf: "center",
+
     fontSize: 13,
-    position: "absolute",
-    right: 68,
-    top: 12,
-    color: "white"
+    color: "white",
+    top: 1,
   },
 
   profiletitle2: {
-    alignSelf: "flex-end",
+
     fontSize: 16,
-    position: "absolute",
-    top: 30,
-    right: 14,
-    color: "white"
+    color: "white",
+    left: -4
+
   }
 
 })

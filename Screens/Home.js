@@ -89,7 +89,9 @@ const App: () => Node = (props) => {
 
             <Topbar title={"Home"} mb={40} t={9} onPress={back} />
             <View style={styles.Bluecontainer}>
-                <View style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
+
+                <TouchableOpacity style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
+
                     <View style={{ width: "90%", height: "80%", flexDirection: "row", }}>
                         <View>
                             <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
@@ -99,7 +101,8 @@ const App: () => Node = (props) => {
                             <Text style={styles.profiletitle2}> {Constants['USER_FULL_NAME']}</Text>
                         </View>
                     </View>
-                </View>
+
+                </TouchableOpacity>
                 <View style={{ width: "50%", justifyContent: "center" }}>
                     <Image source={require('../images/LogoLight.png')} style={styles.logo1} />
                 </View>
@@ -122,8 +125,8 @@ const App: () => Node = (props) => {
             <TouchableOpacity onPress={pressHandler}>
                 <View style={styles.tracksettlementbutton}>
                     <Image source={require('../images/Artboard2.png')} style={styles.tracksettlementlogo} />
-                    <Text style={styles.tracksettlementtitle}>{` Track Your 
-  Settlements`} </Text>
+                    <Text style={styles.tracksettlementtitle}>{`Track Your 
+Settlements`} </Text>
                 </View>
             </TouchableOpacity>
 
@@ -150,7 +153,7 @@ const App: () => Node = (props) => {
 
 
 
-                <View style={{ height: 100, position: "absolute", alignSelf: "flex-start", left: "6%", }}>
+                <View style={{ height: 100, position: "absolute", alignSelf: "flex-start", left: "5%", }}>
 
 
                     <Homee img={require('../images/Artboard3.png')} onpress={mpp} title={`My Property Passport`} />
@@ -222,7 +225,7 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
         height: 30,
         width: 160,
-        alignSelf: "center"
+        left: 20
 
 
     },
