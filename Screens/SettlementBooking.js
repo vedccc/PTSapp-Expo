@@ -17,14 +17,9 @@ import {
 
 import Icon from 'react-native-vector-icons/AntDesign'
 import Iconfa from 'react-native-vector-icons/FontAwesome'
-
 import Topbar from '../Components/Topbar.js'
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-import MyPropertyComponent from '../Components/MyPropertyPassport.js';
-import PathwaySteps from './PathwaySteps.js';
 
-const MeetYourConveyancer = ({ navigation }) => {
+const SettlementBooking = ({ navigation }) => {
 
     const back = () => {
         navigation.push('PathwaySteps')
@@ -38,7 +33,7 @@ const MeetYourConveyancer = ({ navigation }) => {
 
         <View style={{ height: '100%', backgroundColor: 'white' }}>
 
-            <Topbar title={"Meet Your Conveyancer"} mb={40} t={9} onPress={back} />
+            <Topbar title={"Settlement Booking"} t={9} onPress={back} />
             <View style={styles.profilecontainer}>
 
                 <TouchableOpacity >
@@ -50,13 +45,14 @@ const MeetYourConveyancer = ({ navigation }) => {
                     </View>
                 </TouchableOpacity>
 
-                <Image source={require('../images/110DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                <Image source={require('../images/220DarkCrop.jpeg')} style={{ height: 260, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
                 <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
                     <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 55, color: '#606060' }}>Thank you! We have received</Text>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 270, left: 100, color: '#606060' }}>your Contact of Sale.</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060' }}>Thank you for nominating us to complete your property Settlement. We've recieved a copy of the Contract of Sale and will start preparing your paperwork Your conveyancer will be in touch soon.</Text>
+                <Text style={{ color: 'black', fontSize: 24, top: 95, left: 75, color: '#606060' }}>Settlement is coming up</Text>
+
+                <Text style={{ color: 'black', fontSize: 24, top: 95, width: 370, left: 170, color: '#606060' }}>soon!</Text>
+                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', }}>Your settlement is coming up, As the buyer, seller, and banks (if any) get ready for settlement, we're still waiting on one or more parties to confirm that they're ready to settle. Your conveyancer will let you know as soon as everypne is confirmed. Not long to go now!</Text>
             </View>
         </View>
     )
@@ -105,4 +101,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default MeetYourConveyancer;
+export default SettlementBooking;

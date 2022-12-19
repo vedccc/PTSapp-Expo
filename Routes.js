@@ -15,6 +15,12 @@ import PathwaySteps from './Screens/PathwaySteps.js';
 import PropertyUnderOffer from './Screens/PropertyUnderOffer.js';
 import MeetYourConveyancer from './Screens/MeetYourConveyancer.js';
 import DepositePaid from './Screens/DepositePaid.js';
+import InitialDocumentsSigned from './Screens/InitialDocumentsSigned.js';
+import PurchaseUnconditional from './Screens/PurchaseUnconditional.js';
+import UnconditionalDocumentsSigned from './Screens/UnconditionalSigned.js';
+import SettlementBooking from './Screens/SettlementBooking.js';
+import SettlementEffected from './Screens/SettlementEffected.js';
+import MyDocumentManagement from './Screens/MyDocumentManagement.js';
 
 // const Drawer = createDrawerNavigator();
 // const NavigationDrawer = () => (
@@ -110,6 +116,42 @@ const screens = {
   },
   Deposit: {
     screen: Deposit,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  InitialDocumentsSigned: {
+    screen: InitialDocumentsSigned,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  PurchaseUnconditional: {
+    screen: PurchaseUnconditional,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  UnconditionalDocumentsSigned: {
+    screen: UnconditionalDocumentsSigned,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  SettlementBooking: {
+    screen: SettlementBooking,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  SettlementEffected: {
+    screen: SettlementEffected,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  MyDocumentManagement: {
+    screen: MyDocumentManagement,
     navigationOptions: {
       header: null,
     }

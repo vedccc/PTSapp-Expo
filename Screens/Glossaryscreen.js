@@ -203,7 +203,7 @@ const App: () => Node = ({ navigation }) => {
 
         <View style={styles.Container}>
 
-            <Topbar title={"Glossary"} mb={40} onPress={back} />
+            <Topbar title={"Glossary"} mb={40} t={9} onPress={back} />
             <View style={styles.HeaderBox}>
 
                 <Image source={require('../images/Artboard4.png')} style={styles.Img1} />

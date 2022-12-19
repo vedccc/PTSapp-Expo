@@ -24,7 +24,7 @@ import Iconfa from 'react-native-vector-icons/FontAwesome'
 import Topbar from '../Components/Topbar.js'
 import Textfeild from '../Components/Textfeild'
 import Darkb from '../Components/Darkbutton'
-export default function App({navigation}) {
+export default function App({ navigation }) {
 
     const Create = () => {
         navigation.push('Welcome')
@@ -74,7 +74,7 @@ number ` }
 
             </ScrollView>
 
-             
+
         </View>
 
 

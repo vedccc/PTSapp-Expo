@@ -38,7 +38,7 @@ const PropertyUnderOffer = ({ navigation }) => {
 
         <View style={{ height: '100%', backgroundColor: 'white' }}>
 
-            <Topbar title={"Property Under Offer"} mb={40} onPress={back} />
+            <Topbar title={"Property Under Offer"} mb={40} t={9} onPress={back} />
             <View style={styles.profilecontainer}>
 
                 <TouchableOpacity >

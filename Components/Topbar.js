@@ -24,7 +24,7 @@ export default function App(props) {
 
     <View style={{ borderBottomWidth: 2, borderBottomColor: "grey", height: Dimensions.get('window').height * 0.124, justifyContent: "center" }}>
 
-      <TouchableOpacity onPress={props.onPress}><Icon name="left" style={{ fontSize: 23, fontWeight: "600", left: 10, position: "absolute", color: "#133459", }} /></TouchableOpacity>
+      <TouchableOpacity onPress={props.onPress}><Icon name="left" style={{ fontSize: 23, fontWeight: "600", left: 10, position: "absolute", color: "#133459", top: props.t }} /></TouchableOpacity>
 
       <Text style={{ alignSelf: "center", fontSize: 25, fontWeight: "250", color: "#133459", position: "absolute", bottom: 15 }} >{props.title}</Text>
 

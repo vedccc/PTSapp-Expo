@@ -31,6 +31,7 @@ import Iconfa from 'react-native-vector-icons/FontAwesome'
 // import Navigator from '../Routes'
 import Topbar from '../Components/Topbar.js'
 import Homee from '../Components/Homeoption'
+import MyDocumentManagement from './MyDocumentManagement.js';
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 
@@ -72,6 +73,9 @@ const App: () => Node = (props) => {
         navigation.push('Login')
     }
 
+    const MyDocumentManagement = () => {
+        navigation.push('MyDocumentManagement')
+    }
 
 
 
@@ -83,7 +87,7 @@ const App: () => Node = (props) => {
 
 
 
-            <Topbar title={"Home"} mb={40} onPress={back} />
+            <Topbar title={"Home"} mb={40} t={9} onPress={back} />
             <View style={styles.Bluecontainer}>
                 <View style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
                     <View style={{ width: "90%", height: "80%", flexDirection: "row", }}>
@@ -136,7 +140,7 @@ const App: () => Node = (props) => {
                     <Homee img={require('../images/Artboard4.png')} onpress={glossary} title={'My Glossary'} />
 
 
-                    <Homee img={require('../images/Artboard4.png')} title={`My Document Managment`} />
+                    <Homee img={require('../images/Artboard4.png')} onpress={MyDocumentManagement} title={`My Document Managment`} />
 
 
 

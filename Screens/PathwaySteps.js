@@ -1,13 +1,7 @@
 import React from 'react';
 import type { Node } from 'react';
-import { ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, Dimensions, Image, Button, TouchableOpacity, TextInput, Touchable } from 'react-native';
-
-import Icon from 'react-native-vector-icons/AntDesign'
-import Iconfa from 'react-native-vector-icons/FontAwesome'
+import { ScrollView, StatusBar, StyleSheet, Text, View, Dimensions, Image, TouchableOpacity } from 'react-native';
 import Topbar from '../Components/Topbar.js'
-import Homee from '../Components/Homeoption'
-import PropertyUnderOffer from './PropertyUnderOffer.js';
-
 
 const PathwaySteps = ({ navigation }) => {
 
@@ -26,30 +20,49 @@ const PathwaySteps = ({ navigation }) => {
     const DepositePaid = () => {
         navigation.push('DepositePaid')
     }
+
+    const InitialDocumentsSigned = () => {
+        navigation.push('InitialDocumentsSigned')
+    }
+
+    const PurchaseUnconditional = () => {
+        navigation.push('PurchaseUnconditional')
+    }
+
+    const UnconditionalDocumentsSigned = () => {
+        navigation.push('UnconditionalDocumentsSigned')
+    }
+
+    const SettlementBooking = () => {
+        navigation.push('SettlementBooking')
+    }
+
+    const SettlementEffected = () => {
+        navigation.push('SettlementEffected')
+    }
+
     return (
         <View style={{ height: '100%', backgroundColor: 'white' }}>
 
-            <Topbar title={"Pathway Steps"} mb={40} onPress={back} />
+            <Topbar title={"Pathway Steps"} mb={40} t={9} onPress={back} />
             <View style={styles.profilecontainer}>
-                <TouchableOpacity >
+                <TouchableOpacity>
                     <View style={styles.subprofilecontainer}>
                         <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
                         <Text style={styles.profiletitle1}>Welcome</Text>
                         <Text style={styles.profiletitle2}>Varun Verma</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ backgroundColor: "#83bad3" }} >
+                <TouchableOpacity style={{ backgroundColor: "#83bad3" }}>
                     <View style={styles.subprofilecontainer1}>
                         <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg1} />
                         <Text style={styles.profiletitle3}>Conveyancer</Text>
                         <Text style={styles.profiletitle4}>eSurabh Sh...</Text>
-
                     </View>
                 </TouchableOpacity>
-
             </View>
 
-            <ScrollView >
+            <ScrollView>
                 <View style={styles.pinkcontainer}>
                     <View style={{ left: 10, }}>
                         <View style={{ flexDirection: 'row', top: 23, }}>
@@ -62,10 +75,7 @@ const PathwaySteps = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ backgroundColor: '#a5aeb5', margin: 11.5, height: 16 }}>
-
-                </View>
-
+                <View style={{ backgroundColor: '#a5aeb5', margin: 11.5, height: 16 }}></View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
                     <TouchableOpacity onPress={Propertyoffer}>
@@ -104,32 +114,32 @@ const PathwaySteps = ({ navigation }) => {
                 </View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={InitialDocumentsSigned}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
                         <Text style={{ alignSelf: 'flex-end', right: 10, top: 10, fontSize: 16 }}>Initial Documents Signed</Text>
                         <Text style={{ alignSelf: 'flex-end', right: 10, top: 15, fontSize: 13 }}>Your initial documents have not</Text>
-                        <Text style={{ alignSelf: 'flex-end', right: 15, top: 15, fontSize: 13 }}>yet been signed</Text>
+                        <Text style={{ alignSelf: 'flex-end', right: 11, top: 15, fontSize: 13 }}>yet been signed</Text>
                         <Image source={require('../images/340Dark.jpeg')} style={{ height: 110, width: 150, resizeMode: 'stretch', position: 'absolute', left: 15, top: 5 }} />
                     </TouchableOpacity>
                 </View>
 
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={PurchaseUnconditional}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
                         <Text style={{ alignSelf: 'flex-end', right: 10, top: 10, fontSize: 16 }}>Purchase Unconditional</Text>
                         <Text style={{ alignSelf: 'flex-end', right: 10, top: 15, fontSize: 13 }}>Your purchase is not yet</Text>
-                        <Text style={{ alignSelf: 'flex-end', right: 15, top: 15, fontSize: 13 }}>unconditional</Text>
+                        <Text style={{ alignSelf: 'flex-end', right: 11, top: 15, fontSize: 13 }}>unconditional</Text>
                         <Image source={require('../images/160Dark.jpeg')} style={{ height: 110, width: 150, resizeMode: 'stretch', position: 'absolute', left: 15, top: 5 }} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={UnconditionalDocumentsSigned}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
@@ -141,7 +151,7 @@ const PathwaySteps = ({ navigation }) => {
                 </View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={SettlementBooking}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
@@ -153,21 +163,17 @@ const PathwaySteps = ({ navigation }) => {
                 </View>
 
                 <View style={{ height: 140, top: 5, backgroundColor: 'white', marginBottom: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={SettlementEffected}>
                         <View style={{ backgroundColor: '#80bdd2', right: 10, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end' }}>
                             <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                         </View>
                         <Text style={{ alignSelf: 'flex-end', right: 10, top: 10, fontSize: 16 }}>Settlement Effected</Text>
                         <Text style={{ alignSelf: 'flex-end', right: 10, top: 15, fontSize: 13 }}>Settlement is not completed yet</Text>
-
                         <Image source={require('../images/230Dark.jpeg')} style={{ height: 110, width: 150, resizeMode: 'stretch', position: 'absolute', left: 15, top: 5 }} />
                     </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
-
-
-
     );
 };
 
@@ -178,14 +184,12 @@ const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
         height: 80,
-
         flexDirection: 'row',
     },
 
     subprofilecontainer: {
         width: 200,
         height: 60,
-
         left: 20,
         top: 6
     },
@@ -227,7 +231,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         right: 85,
         top: 30,
-
         color: "white"
     },
 

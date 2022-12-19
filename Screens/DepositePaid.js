@@ -17,12 +17,7 @@ import {
 
 import Icon from 'react-native-vector-icons/AntDesign'
 import Iconfa from 'react-native-vector-icons/FontAwesome'
-
 import Topbar from '../Components/Topbar.js'
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-import MyPropertyComponent from '../Components/MyPropertyPassport.js';
-import PathwaySteps from './PathwaySteps.js';
 
 const DepositePaid = ({ navigation }) => {
 
@@ -38,7 +33,7 @@ const DepositePaid = ({ navigation }) => {
 
         <View style={{ height: '100%', backgroundColor: 'white' }}>
 
-            <Topbar title={"Deposite Paid"} mb={40} onPress={back} />
+            <Topbar title={"Deposite Paid"} mb={40} t={9} onPress={back} />
             <View style={styles.profilecontainer}>
 
                 <TouchableOpacity >

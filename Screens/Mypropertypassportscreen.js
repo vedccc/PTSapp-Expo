@@ -46,88 +46,101 @@ const App: () => Node = ({ navigation }) => {
 
     <View style={{ height: '100%', backgroundColor: 'white' }}>
 
-      <Topbar title={"My Property Passport "} mb={40} onPress={back} />
-      <View style={styles.profilecontainer}>
+      <Topbar title={"My Property Passport "} mb={40} t={9} onPress={back} />
 
-        <TouchableOpacity >
-          <View style={styles.subprofilecontainer}>
-            <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
-            <Text style={styles.profiletitle1}>Welcome</Text>
-            <Text style={styles.profiletitle2}>Vedant chellani</Text>
-          </View>
-        </TouchableOpacity>
 
-      </View>
-      <ScrollView style={{ height: 1500 }}>
+      <ScrollView>
+        <View style={styles.profilecontainer}>
+          <TouchableOpacity >
+            <View style={styles.subprofilecontainer}>
+              <Image source={require('../images/UserDefault.jpg')} style={styles.profileimg} />
+              <Text style={styles.profiletitle1}>Welcome</Text>
+              <Text style={styles.profiletitle2}>Vedant chellani</Text>
+            </View>
+          </TouchableOpacity>
 
+        </View>
 
         <View>
           <View style={styles.txt1Container} >
-            <Text style={styles.txt1}>Properties i have</Text>
-            <Text style={{ fontWeight: "bold" }}> Purchased</Text>
+            <Text style={styles.txt1}>Properties i have <Text style={{ fontWeight: "bold" }}> Purchased</Text></Text>
           </View>
 
-
           <MyPropertyComponent
+            left={15}
+            w={Dimensions.get('window').width * 0.92}
             value={PathwayStepsScreen}
-            BoxText={'Buyer Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
-          />
-
-
-          <MyPropertyComponent
-            BoxText={'7 George Street north    Strathfield, NSW2137       Australia  VacantLand'}
-          />
-
-          <View style={styles.txt2Container} >
-            <Text style={styles.txt1}>Properties i have</Text>
-            <Text style={{ fontWeight: "bold" }}> Sold</Text>
-          </View>
-
-          <MyPropertyComponent
-            BoxText={'Seller Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
-          />
-
-          <View style={styles.txt2Container} >
-            <Text style={styles.txt1}>Properties i have</Text>
-            <Text style={{ fontWeight: "bold" }}> Watched</Text>
-          </View>
-
-          <MyPropertyComponent
-            BoxText={'BuyerAgent Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
+            BoxText={`Buyer Australia Avenue Sydney Olympic Park, NSW 2127 
+Australia
+Residential`}
           />
 
           <MyPropertyComponent
-            BoxText={'SellerAgent Australia Avenue       Sydney Olympic Park, NSW     2127 Australia               Residential'}
+            left={15}
+            w={Dimensions.get('window').width * 0.92}
+            BoxText={`7 George Street north 
+Strathfield, NSW 2137 Australia 
+VacantLand`}
           />
         </View>
 
-      </ScrollView>
-    </View>
+
+        <View>
+          <View style={styles.txt2Container} >
+            <Text style={styles.txt1}>Properties i have <Text style={{ fontWeight: "bold" }}>sold</Text></Text>
+          </View>
+
+          <MyPropertyComponent
+            left={15}
+            w={Dimensions.get('window').width * 0.92}
+            BoxText={`Seller Australia Avenue Sydney Olympic Park, NSW 2127 
+Australia 
+Residential`}
+          />
+        </View>
+
+
+        <View>
+          <View style={styles.txt3Container} >
+            <Text style={styles.txt1}>Properties i have <Text style={{ fontWeight: "bold" }}>Watched</Text></Text>
+          </View>
+          <MyPropertyComponent
+            left={15}
+            w={Dimensions.get('window').width * 0.92}
+            BoxText={`BuyerAgent Australia Avenue Sydney Olympic Park, NSW 
+2127 Australia
+Residential`}
+          />
+
+          <MyPropertyComponent
+            left={15}
+            w={Dimensions.get('window').width * 0.92}
+            BoxText={`SellerAgent Australia Avenue       Sydney Olympic Park, NSW 
+2127 Australia  
+Residential`}
+          />
+        </View>
+      </ScrollView >
+    </View >
 
   );
 };
 
 const styles = StyleSheet.create({
+
   txt1Container: {
-    flexDirection: "row",
-    top: 20,
-    marginLeft: 23,
+    top: 15,
+    left: 20,
+    marginBottom: 30,
+
   },
   txt2Container: {
-    flexDirection: "row",
-    marginTop: 30,
-    marginLeft: 23,
-    top: 15,
+    left: 17,
+    marginBottom: 30,
   },
-  RedtxtContainer: {
-    color: 'red',
-    marginTop: 30,
-    marginLeft: 15,
-  },
-
-  txt2: {
-
-    color: 'red',
+  txt3Container: {
+    left: 20,
+    marginBottom: 30,
   },
 
   profilecontainer: {
@@ -173,16 +186,6 @@ const styles = StyleSheet.create({
 })
 
 export default App;
-
-
-
-
-
-
-
-
-
-  // *test screens *//
 
 
 
