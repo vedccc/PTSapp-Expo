@@ -50,7 +50,7 @@ const MeetYourConveyancer = ({ navigation }) => {
                     </View>
                 </TouchableOpacity>
 
-                <Image source={require('../images/110DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                <Image source={require('../images/110DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 105 }} />
                 <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
                     <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                 </View>
@@ -65,7 +65,7 @@ const MeetYourConveyancer = ({ navigation }) => {
 const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15
     },
 
     profileimg: {

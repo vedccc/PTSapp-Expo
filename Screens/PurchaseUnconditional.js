@@ -44,14 +44,15 @@ const PurchaseUnconditional = ({ navigation }) => {
                         <Text style={{ left: 180, color: 'white', fontSize: 13, width: 160, top: 10 }}>Buyer Australia Avenue  Sydney Olympic Park, NSW 2127 Australia</Text>
                     </View>
                 </TouchableOpacity>
-
-                <Image source={require('../images/160DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
-                <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
-                    <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                <View style={{ top: 5 }}>
+                    <Image source={require('../images/160DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                    <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
+                        <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    </View>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 72, color: '#606060' }}>Your purchase is not yet</Text>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 130, color: '#606060' }}>unconditional</Text>
+                    <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', left: 5 }}>Some of the conditions of the contract have not been met yet,so the property is still under offer.</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 72, color: '#606060' }}>Your purchase is not yet</Text>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 130, color: '#606060' }}>unconditional</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', left: 5 }}>Some of the conditions of the contract have not been met yet,so the property is still under offer.</Text>
             </View>
         </View>
     )
@@ -60,7 +61,7 @@ const PurchaseUnconditional = ({ navigation }) => {
 const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15
     },
 
     profileimg: {

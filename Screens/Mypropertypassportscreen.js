@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
 
   profilecontainer: {
     backgroundColor: "#133459",
-    height: 80,
+    height: 90,
     justifyContent: "flex-start"
   },
 
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     width: 180,
     height: 60,
     position: "absolute",
-    left: 20, top: 6
+    left: 20, top: 12
   },
 
   profileimg: {

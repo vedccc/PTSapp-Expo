@@ -50,13 +50,13 @@ const PropertyUnderOffer = ({ navigation }) => {
                     </View>
                 </TouchableOpacity>
 
-                <Image source={require('../images/300NEW.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                <Image source={require('../images/300NEW.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 110 }} />
                 <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
                     <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 290, left: 55, color: '#606060' }}>Congratulations! Your offer </Text>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 270, left: 100, color: '#606060' }}>has been accepted.</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060' }}>Congratulations on your offer being accepted. There are a few condition that need to be met before we officially say that the property is sold (such as finance approval). Please keep us updated as to the progress of these conditions.</Text>
+                <Text style={{ color: 'black', fontSize: 23, top: 100, width: 290, left: 55, color: '#606060' }}>Congratulations! Your offer </Text>
+                <Text style={{ color: 'black', fontSize: 23, top: 100, width: 270, left: 100, color: '#606060' }}>has been accepted.</Text>
+                <Text style={{ color: 'black', fontSize: 13, top: 110, marginHorizontal: 10, color: '#606060' }}>Congratulations on your offer being accepted. There are a few condition that need to be met before we officially say that the property is sold (such as finance approval). Please keep us updated as to the progress of these conditions.</Text>
             </View>
         </View>
     )
@@ -65,7 +65,7 @@ const PropertyUnderOffer = ({ navigation }) => {
 const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -73,7 +73,8 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15,
+
     },
 
     profileimg: {
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         fontSize: 13,
         position: "absolute",
-        right: 49,
+        right: 45,
         top: 5,
         color: "white"
     },
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
         width: 110,
         position: "absolute",
         top: 23,
-        right: 14,
+        right: 10,
         color: "#F0F0F0"
     }
 })

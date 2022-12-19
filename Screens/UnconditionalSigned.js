@@ -45,15 +45,16 @@ const UnconditionalDocumentsSigned = ({ navigation }) => {
                         <Text style={{ left: 180, color: 'white', fontSize: 13, width: 160, top: 10 }}>Buyer Australia Avenue  Sydney Olympic Park, NSW 2127 Australia</Text>
                     </View>
                 </TouchableOpacity>
-
-                <Image source={require('../images/340DarkCrop.jpeg')} style={{ height: 260, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
-                <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
-                    <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                <View style={{ top: 5 }}>
+                    <Image source={require('../images/340DarkCrop.jpeg')} style={{ height: 260, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                    <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
+                        <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    </View>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 95, color: '#606060' }}>Your unconditional</Text>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 59, color: '#606060' }}>documents have not been</Text>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 170, color: '#606060' }}>signed</Text>
+                    <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', }}>Our records show that we have not yet received your unconditional documents back (if required). You will be notified once these have beenn sent to you. Upon reciept. please read them carefully, and sign them (if required) as soon as possible</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 95, color: '#606060' }}>Your unconditional</Text>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 59, color: '#606060' }}>documents have not been</Text>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 170, color: '#606060' }}>signed</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', }}>Our records show that we have not yet received your unconditional documents back (if required). You will be notified once these have beenn sent to you. Upon reciept. please read them carefully, and sign them (if required) as soon as possible</Text>
             </View>
         </View>
     )
@@ -62,7 +63,7 @@ const UnconditionalDocumentsSigned = ({ navigation }) => {
 const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15
     },
 
     profileimg: {

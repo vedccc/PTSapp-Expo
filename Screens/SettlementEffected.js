@@ -44,15 +44,16 @@ const SettlementEffected = ({ navigation }) => {
                         <Text style={{ left: 180, color: 'white', fontSize: 13, width: 160, top: 10 }}>Buyer Australia Avenue  Sydney Olympic Park, NSW 2127 Australia</Text>
                     </View>
                 </TouchableOpacity>
+                <View style={{}}>
+                    <Image source={require('../images/230DarkCrop.jpeg')} style={{ height: 230, left: 23, width: 320, resizeMode: 'stretch', top: 150 }} />
+                    <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 123, position: 'absolute' }}>
+                        <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    </View>
+                    <Text style={{ color: 'black', fontSize: 26, top: 145, left: 33, color: '#606060' }}>Settlement is not completed</Text>
 
-                <Image source={require('../images/230DarkCrop.jpeg')} style={{ height: 230, left: 23, width: 320, resizeMode: 'stretch', top: 150 }} />
-                <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
-                    <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    <Text style={{ color: 'black', fontSize: 26, top: 140, width: 370, left: 180, color: '#606060' }}>yet.</Text>
+                    <Text style={{ color: 'black', fontSize: 13, top: 150, marginHorizontal: 10, color: '#606060', }}>it's almost settlement time! Your conveyancer will keep you updated as settlement progresses. You do not need to attend the settlement as your conveyancer will represent you. Once settlement is completed, your conveyancer will let you know the good</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 26, top: 145, left: 33, color: '#606060' }}>Settlement is not completed</Text>
-
-                <Text style={{ color: 'black', fontSize: 26, top: 140, width: 370, left: 180, color: '#606060' }}>yet.</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 150, marginHorizontal: 10, color: '#606060', }}>it's almost settlement time! Your conveyancer will keep you updated as settlement progresses. You do not need to attend the settlement as your conveyancer will represent you. Once settlement is completed, your conveyancer will let you know the good</Text>
             </View>
         </View>
     )
@@ -61,7 +62,7 @@ const SettlementEffected = ({ navigation }) => {
 const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15
     },
 
     profileimg: {

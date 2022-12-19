@@ -44,23 +44,28 @@ const InitialDocumentsSigned = ({ navigation }) => {
                         <Text style={{ left: 180, color: 'white', fontSize: 13, width: 160, top: 10 }}>Buyer Australia Avenue  Sydney Olympic Park, NSW 2127 Australia</Text>
                     </View>
                 </TouchableOpacity>
-
-                <Image source={require('../images/340DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
-                <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
-                    <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                <View style={styles.ImgContainer}>
+                    <Image source={require('../images/340DarkCrop.jpeg')} style={{ height: 290, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                    <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
+                        <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    </View>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 55, color: '#606060' }}>Your initial documents have</Text>
+                    <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 100, color: '#606060' }}>not yet been signed</Text>
+                    <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', left: 5 }}>Our records show that we have not yet received your initial documents back. You will be notified once these have been sent to you. Upon reciept, please ensure that you sign and return them to your conveyancer as soon as possible.</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 55, color: '#606060' }}>Your initial documents have</Text>
-                <Text style={{ color: 'black', fontSize: 23, top: 95, width: 370, left: 100, color: '#606060' }}>not yet been signed</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', left: 5 }}>Our records show that we have not yet received your initial documents back. You will be notified once these have been sent to you. Upon reciept, please ensure that you sign and return them to your conveyancer as soon as possible.</Text>
             </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
+    ImgContainer: {
+        top: 5
+
+    },
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -68,7 +73,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15
     },
 
     profileimg: {

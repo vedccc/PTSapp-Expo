@@ -25,7 +25,7 @@ import Topbar from '../Components/Topbar.js'
 import Textfeild from '../Components/Textfeild'
 import Darkb from '../Components/Darkbutton'
 
-export default function App({navigation}) {
+export default function App({ navigation }) {
     const login = () => {
         navigation.push('Login')
     }
@@ -36,15 +36,13 @@ export default function App({navigation}) {
         <View>
 
 
-
-
             <Topbar title={"Reset Password"} mb={40} onPress={login} />
             <Text style={styles.title1}>Reset password</Text>
             <Text style={styles.para}>
                 {` Enter your email address and we'll send you instructions
  on how to reset your password`}
             </Text>
-            <Textfeild value={"Email"} holder={" Enter email"} top={Dimensions.get('window').height * 0.27} position={"absolute"} />
+            <Textfeild title={"Email"} holder={" Enter email"} top={Dimensions.get('window').height * 0.27} position={"absolute"} />
 
             <Darkb t={Dimensions.get('window').height * 0.39} position={"absolute"} value={"hi"} />
 

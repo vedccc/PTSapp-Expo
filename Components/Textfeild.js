@@ -23,10 +23,13 @@ export default function App(props) {
     return (
 
         <View style={{ alignSelf: "center", top: props.top, position: props.position, marginBottom: props.mb, marginTop: props.mt }}>
-            <Text style={{ marginBottom: 8, fontSize: 17, color: "#133459", fontWeight: "500" }}>{props.value}</Text>
+            <Text style={{ marginBottom: 8, fontSize: 17, color: "#133459", fontWeight: "500" }}>{props.title}</Text>
             <TextInput
                 placeholder={props.holder}
                 style={{ height: 35, width: Dimensions.get('window').width * 0.92, borderWidth: 1.6, borderRadius: 6, borderColor: "#eaedf2" }}
+                onChangeText={props.onChangeText}
+                onBlur={props.onBlur}
+                value={props.value}
             />
         </View>
     );

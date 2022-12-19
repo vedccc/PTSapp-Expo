@@ -23,7 +23,9 @@ import * as yup from 'yup';
 import Icon from 'react-native-vector-icons/AntDesign'
 import * as DataCoreApi from '../apis/DataCoreApi.js';
 import * as GlobalVariables from '../config/GlobalVariableContext';
-import Iconfa from 'react-native-vector-icons/FontAwesome'
+import Iconfa from 'react-native-vector-icons/FontAwesome';
+import Topbar from '../Components/Topbar';
+
 export default function App({ navigation }) {
 
   const Constants = GlobalVariables.useValues();
@@ -145,15 +147,7 @@ export default function App({ navigation }) {
         <View>
 
           {/* header */}
-          <View style={styles.header}>
-
-            <TouchableOpacity onPress={back}><Icon name="left" style={styles.headericon1} /></TouchableOpacity>
-
-            <Text style={styles.headertitle} >Login</Text>
-
-
-
-          </View>
+          <Topbar title={"Login"} mb={40} t={9} onPress={back} />
           {/* header end */}
 
 
@@ -231,7 +225,7 @@ const styles = StyleSheet.create({
     fontSize: 23,
     fontWeight: "600",
     left: 10,
-    position: "absolute",
+    top: 5,
     color: "#133459",
 
   },
@@ -241,6 +235,7 @@ const styles = StyleSheet.create({
     fontWeight: "250",
     color: "#133459",
     position: "absolute",
+
   },
 
   headericon2: {

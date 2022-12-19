@@ -25,7 +25,7 @@ import Topbar from '../Components/Topbar.js'
 import Textfeild from '../Components/Textfeild'
 import Darkb from '../Components/Darkbutton'
 
-export default function App({navigation}) {
+export default function App({ navigation }) {
     const Create = () => {
         navigation.push('Welcome')
     }
@@ -38,7 +38,7 @@ export default function App({navigation}) {
             <View style={styles.container}>
 
 
-                <Topbar title={"Signup"} mb={40} onPress={Create}/>
+                <Topbar title={"Signup"} mb={40} onPress={Create} />
 
 
                 <View style={styles.heading}>
@@ -53,12 +53,12 @@ invite to Pathway To Settlement ` }
                     </Text>
                 </View>
 
-                <Textfeild holder={" Enter your invite email"} value={"Your Invite Email"} mb={19} mt={200} />
+                <Textfeild holder={" Enter your invite email"} title={"Your Invite Email"} mb={19} mt={200} />
 
                 <Text style={styles.para}>{`Once you enter the correct email address you will be 
 able to proceed to the next step ` }
 
-                    </Text>
+                </Text>
                 <Darkb value={"NEXT STEP"} />
 
 

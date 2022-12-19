@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     PinkText1: { fontSize: 15 },
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 80,
+        height: 90,
         flexDirection: 'row',
     },
 
@@ -191,13 +191,13 @@ const styles = StyleSheet.create({
         width: 200,
         height: 60,
         left: 20,
-        top: 6
+        top: 12
     },
     subprofilecontainer1: {
         width: 200,
         height: 60,
         flexDirection: 'row-reverse',
-        top: 6,
+        top: 12,
     },
     profileimg: {
         resizeMode: 'stretch',

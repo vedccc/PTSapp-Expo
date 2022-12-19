@@ -44,15 +44,16 @@ const SettlementBooking = ({ navigation }) => {
                         <Text style={{ left: 180, color: 'white', fontSize: 13, width: 160, top: 10 }}>Buyer Australia Avenue  Sydney Olympic Park, NSW 2127 Australia</Text>
                     </View>
                 </TouchableOpacity>
+                <View style={{ top: 5 }}>
+                    <Image source={require('../images/220DarkCrop.jpeg')} style={{ height: 260, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
+                    <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
+                        <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    </View>
+                    <Text style={{ color: 'black', fontSize: 24, top: 95, left: 75, color: '#606060' }}>Settlement is coming up</Text>
 
-                <Image source={require('../images/220DarkCrop.jpeg')} style={{ height: 260, left: 23, width: 320, resizeMode: 'stretch', top: 100 }} />
-                <View style={{ backgroundColor: '#80bdd2', right: 23, width: 100, borderRadius: 8, height: 23, justifyContent: 'center', alignSelf: 'flex-end', top: 116, position: 'absolute' }}>
-                    <Text style={{ alignSelf: 'center', fontSize: 11 }}>IN PROGRESS</Text>
+                    <Text style={{ color: 'black', fontSize: 24, top: 95, width: 370, left: 170, color: '#606060' }}>soon!</Text>
+                    <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', }}>Your settlement is coming up, As the buyer, seller, and banks (if any) get ready for settlement, we're still waiting on one or more parties to confirm that they're ready to settle. Your conveyancer will let you know as soon as everypne is confirmed. Not long to go now!</Text>
                 </View>
-                <Text style={{ color: 'black', fontSize: 24, top: 95, left: 75, color: '#606060' }}>Settlement is coming up</Text>
-
-                <Text style={{ color: 'black', fontSize: 24, top: 95, width: 370, left: 170, color: '#606060' }}>soon!</Text>
-                <Text style={{ color: 'black', fontSize: 13, top: 105, marginHorizontal: 10, color: '#606060', }}>Your settlement is coming up, As the buyer, seller, and banks (if any) get ready for settlement, we're still waiting on one or more parties to confirm that they're ready to settle. Your conveyancer will let you know as soon as everypne is confirmed. Not long to go now!</Text>
             </View>
         </View>
     )
@@ -61,7 +62,7 @@ const SettlementBooking = ({ navigation }) => {
 const styles = StyleSheet.create({
     profilecontainer: {
         backgroundColor: "#133459",
-        height: 95,
+        height: 105,
         justifyContent: "flex-start"
     },
 
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         width: 180,
         height: 90,
         position: "absolute",
-        left: 20, top: 6
+        left: 20, top: 15
     },
 
     profileimg: {
