@@ -24,7 +24,7 @@ import * as yup from 'yup';
 import Topbar from '../Components/Topbar.js'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import * as PTSApi from '../apis/PTSApi.js';
-import Images from '../config/Images';
+
 import * as GlobalVariables from '../config/GlobalVariableContext';
 
 export default function App(props) {
