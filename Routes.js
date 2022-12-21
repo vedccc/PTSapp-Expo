@@ -21,6 +21,10 @@ import UnconditionalDocumentsSigned from './Screens/UnconditionalSigned.js';
 import SettlementBooking from './Screens/SettlementBooking.js';
 import SettlementEffected from './Screens/SettlementEffected.js';
 import MyDocumentManagement from './Screens/MyDocumentManagement.js';
+import MyProfile from './Screens/MyProfile';
+import UpdateMyProfile from './Screens/UpdateMyProfile.js';
+import UpdatePasswordScreen from './Screens/UpdatePasswordScreen.js';
+import UpdatePasswordSecond from './Screens/UpdatePasswordSecond.js';
 
 // const Drawer = createDrawerNavigator();
 // const NavigationDrawer = () => (
@@ -156,6 +160,31 @@ const screens = {
       header: null,
     }
   },
+  MyProfile: {
+    screen: MyProfile,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  UpdateMyProfile: {
+    screen: UpdateMyProfile,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  UpdatePasswordScreen: {
+    screen: UpdatePasswordScreen,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  UpdatePasswordSecond: {
+    screen: UpdatePasswordSecond,
+    navigationOptions: {
+      header: null,
+    }
+  },
+
 };
 
 // home stack navigator screens

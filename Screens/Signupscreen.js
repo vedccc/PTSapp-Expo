@@ -147,7 +147,7 @@ export default function App(props) {
                     <ScrollView style={styles.container}>
 
 
-                        <Topbar title={"Signup"} mb={40} onPress={Create} />
+                        <Topbar title={"Signup"} mb={40} t={9} onPress={Create} />
                         <View style={{ flexDirection: 'row', alignSelf: 'flex-end', top: 15, justifyContent: 'center', right: 10 }}>
                             <Text style={{ top: 9, right: 5 }}>Step</Text>
                             <View style={{ backgroundColor: '#153558', height: 32, width: 40, height: 40, justifyContent: 'center', borderRadius: 100 }}>

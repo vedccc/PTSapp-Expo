@@ -128,7 +128,7 @@ export default function App({ navigation }) {
   }
 
   const loginvalidation = yup.object().shape({
-    email: yup.string().required('Email Address ir required'),
+    email: yup.string().required('Email Address is required'),
     password: yup.string().min(8, ({ min }) => `Password must be at least ${min} charcahet`).required('Password is Required'),
 
   });
@@ -171,7 +171,7 @@ export default function App({ navigation }) {
             />
           </View>
           {(touched.email && errors.email) &&
-            <Text style={{ top: Dimensions.get('window').height * 0.28, left: 20, color: "red" }}>{errors.email}</Text>
+            <Text style={{ top: Dimensions.get('window').height * 0.28, left: 20, color: "red", }}>{errors.email}</Text>
           }
           {/* Email inupt end */}
 
