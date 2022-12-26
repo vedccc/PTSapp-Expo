@@ -32,8 +32,8 @@ export default function App(props) {
       backgroundColor: "#133459",
       top: props.t,
       alignSelf: "center",
-      position: props.position
-
+      position: props.position,
+      disabled: props.disabledValue
 
     }}>
       <Text style={{ color: "white" }}>{props.value}</Text>

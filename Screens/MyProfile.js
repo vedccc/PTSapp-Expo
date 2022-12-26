@@ -23,10 +23,16 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import Topbar from '../Components/Topbar.js'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import Iconfa from 'react-native-vector-icons/MaterialIcons'
+import * as PTSApi from '../apis/PTSApi.js';
 
-export default function App({ navigation }) {
+import * as GlobalVariables from '../config/GlobalVariableContext';
 
+export default function App(props) {
+
+    const Constants = GlobalVariables.useValues();
+
+    const { theme } = props;
+    const { navigation } = props;
 
     const back = () => {
         navigation.push('Welcome')
@@ -36,6 +42,14 @@ export default function App({ navigation }) {
     }
     const home = () => {
         navigation.push('Home')
+    }
+
+    const UpdateMyProfile = () => {
+        navigation.push('UpdateMyProfile')
+    }
+
+    const UpdatePasswordScreen = () => {
+        navigation.push('UpdatePasswordScreen')
     }
 
     const loginvalidation = yup.object().shape({
@@ -78,19 +92,19 @@ export default function App({ navigation }) {
                     </View>
                     <View style={{ height: 100 }}>
                         <View style={{ left: 15, top: 15, }}>
-                            <Text style={{ fontSize: 25, color: "#133459", fontWeight: "500", marginBottom: 12 }}>Vedant Chellani</Text>
-                            <View style={{ flexDirection: "row", marginBottom: 10 ,}}>
+                            <Text style={{ fontSize: 25, color: "#133459", fontWeight: "500", marginBottom: 12 }}> {Constants['USER_FULL_NAME']}</Text>
+                            <View style={{ flexDirection: "row", marginBottom: 10, }}>
                                 <Text>Email:</Text>
-                                <Text style={{ left: 60, fontWeight: '600', fontSize: 15,position:"absolute" }}>Vedantmchellani@gmail.com</Text>
+                                <Text style={{ left: 60, fontWeight: '600', fontSize: 15, position: "absolute" }}> {Constants['USER_EMAIL']}</Text>
                             </View>
                             <View style={{ flexDirection: "row", }}>
                                 <Text>Phone:</Text>
-                                <Text style={{ left: 60, fontWeight: '600', fontSize: 15,position:"absolute" }}>8959080214</Text>
+                                <Text style={{ left: 60, fontWeight: '600', fontSize: 15, position: "absolute" }}>  {Constants['USER_MOBILE_NO']}</Text>
                             </View>
                         </View>
                     </View>
                     <View style={{ top: 37 }}>
-                        <TouchableOpacity onPress={<bottomnavigator />} style={{
+                        <TouchableOpacity onPress={UpdateMyProfile} style={{
                             width: Dimensions.get('window').width * 0.92,
                             borderRadius: 9,
                             height: 45,
@@ -104,25 +118,27 @@ export default function App({ navigation }) {
                             flexDirection: "row"
                         }}>
                             <Icon name='pencil' size={25} style={{ color: 'white', marginRight: 4 }} />
-                            <Text style={{ color: "white", fontSize: 15 ,fontWeight:"500"}}>UPDATE MY PROFILE</Text>
+                            <Text style={{ color: "white", fontSize: 15, fontWeight: "500" }}>UPDATE MY PROFILE</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={<bottomnavigator />} style={{
-                            width: Dimensions.get('window').width * 0.92,
-                            borderRadius: 9,
-                            height: 45,
-                            alignItems: "center",
-                            justifyContent: "center",
-                            // marginTop: 40,
-                            backgroundColor: "#a5aeb7",
-                            flexDirection: "row",
-                            alignSelf: "center",
-                            // position: props.position
+                        <TouchableOpacity
+                            onPress={UpdatePasswordScreen}
+                            style={{
+                                width: Dimensions.get('window').width * 0.92,
+                                borderRadius: 9,
+                                height: 45,
+                                alignItems: "center",
+                                justifyContent: "center",
+                                // marginTop: 40,
+                                backgroundColor: "#a5aeb7",
+                                flexDirection: "row",
+                                alignSelf: "center",
+                                // position: props.position
 
 
-                        }}>
+                            }}>
                             <Icon name='lock' size={25} style={{ color: 'white', marginRight: 3 }} />
-                            <Text style={{ color: "white", fontSize: 15,fontWeight:"500" }}>UPDATE MY PASSWORD</Text>
+                            <Text style={{ color: "white", fontSize: 15, fontWeight: "500" }}>UPDATE MY PASSWORD</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

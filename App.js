@@ -3,14 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import Profile from './Screens/Home'
 import Navigator from './Routes'
 import { GlobalVariableProvider } from './config/GlobalVariableContext';
-import MyDocumentManagement from './Screens/MyDocumentManagement';
-
+import UpdatePasswordSecond from './Screens/UpdatePasswordSecond';
+import Top from './Components/Topbar'
 export default function App() {
   return (
 
-    <GlobalVariableProvider>
-      <Navigator />
-    </GlobalVariableProvider>
+    // <GlobalVariableProvider>
+    //   <Navigator />
+    // </GlobalVariableProvider>
+    <Top title={'hi'} />
   );
 
 }

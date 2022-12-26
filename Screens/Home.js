@@ -77,7 +77,9 @@ const App: () => Node = (props) => {
         navigation.push('MyDocumentManagement')
     }
 
-
+    const Myprofile = () => {
+        navigation.push('MyProfile')
+    }
 
     return (
 
@@ -90,7 +92,7 @@ const App: () => Node = (props) => {
             <Topbar title={"Home"} mb={40} t={9} onPress={back} />
             <View style={styles.Bluecontainer}>
 
-                <TouchableOpacity style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
+                <TouchableOpacity onPress={Myprofile} style={{ height: 80, width: "50%", justifyContent: "center", top: 1, left: 18 }}>
 
                     <View style={{ width: "90%", height: "80%", flexDirection: "row", }}>
                         <View>

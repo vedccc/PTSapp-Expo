@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, Image, Dimensions, TouchableOpacity } from "rea
 
 const MyPropertyComponent = (props) => {
 
+
     const styles = StyleSheet.create({
         MainContainer: {
             backgroundColor: 'white',
@@ -12,7 +13,7 @@ const MyPropertyComponent = (props) => {
             elevation: 4,
             marginBottom: 32,
             borderRadius: 10,
-            borderWidth: 1
+
         },
         img: {
             top: 13,
