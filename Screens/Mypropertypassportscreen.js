@@ -152,13 +152,12 @@ const styles = StyleSheet.create({
 
   profilecontainer: {
     backgroundColor: "#133459",
-<<<<<<< HEAD
-    height: 90,
-    justifyContent: "flex-start"
-=======
+
+    justifyContent: "flex-start",
+
     height: 80,
     flexDirection: "row"
->>>>>>> b644cdafa9fe66eb4cc8d8fe94c455bdd47961f9
+
   },
 
   subprofilecontainer: {
