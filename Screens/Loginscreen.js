@@ -2,6 +2,8 @@
 // import { StyleSheet, Text, View } from 'react-native';
 // import Welcomescreen from './Screens/Welcomescreen.js'
 
+
+
 import React from 'react';
 import type { Node } from 'react';
 import {
@@ -16,30 +18,41 @@ import {
   Image,
   Button,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  KeyboardAvoidingView
+
 } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Icon from 'react-native-vector-icons/AntDesign'
 import * as DataCoreApi from '../apis/DataCoreApi.js';
 import * as GlobalVariables from '../config/GlobalVariableContext';
 import Iconfa from 'react-native-vector-icons/FontAwesome';
+import Textfeild from '../Components/Textfeild'
+import Darkb from '../Components/Darkbutton'
 import Topbar from '../Components/Topbar';
 
 export default function App({ navigation }) {
 
+  const [showLoading, setShowLoading] = React.useState(false);
   const Constants = GlobalVariables.useValues();
-
   const setGlobalVariableValue = GlobalVariables.useSetValue();
-
   const onpress = async (values) => {
     try {
-
+      setShowLoading(true);
       const loginResponse = await DataCoreApi.authLoginPOST(Constants, {
         email: values.email,
         password: values.password,
       });
-      console.log(loginResponse)
+      if (!loginResponse) {
+        setGlobalVariableValue({
+          key: 'ERROR_MESSAGE',
+          value: 'ERRROR',
+        });
+        setShowLoading(false);
+      }
+      console.log("dd", loginResponse)
       const loginResponseJson = loginResponse;
       const authToken = loginResponseJson.authToken;
       const authRefreshToken = loginResponseJson.authRefreshToken;
@@ -52,6 +65,7 @@ export default function App({ navigation }) {
       });
 
       if (!authToken) {
+        setShowLoading(false);
         return;
       }
 
@@ -110,11 +124,11 @@ export default function App({ navigation }) {
         key: 'USER_PROFILE_IMAGE',
         value: userProfileImage,
       });
-
+      setShowLoading(false);
       navigation.replace('Home');
     } catch (err) {
       console.error(err);
-
+      setShowLoading(false);
     }
   }
   const back = () => {
@@ -133,6 +147,9 @@ export default function App({ navigation }) {
 
   });
 
+
+
+
   return (
     // <Welcomescreen/>
 
@@ -144,68 +161,63 @@ export default function App({ navigation }) {
       validationSchema={loginvalidation}
     >
       {({ handleChange, handleBlur, handleSubmit, values, touched, errors, isValid }) => (
-        <View>
 
-          {/* header */}
+
+
+        <View style=
+          {{ flex: 1 }}>
+          <Spinner visible={showLoading} />
           <Topbar title={"Login"} mb={40} t={9} onPress={back} />
-          {/* header end */}
 
 
+          <View style={{ flex: 1, }}>
+            <KeyboardAvoidingView
+              behavior={Platform.OS === "ios" ? "padding" : "height"}
+              style={styles.container}
+            >
 
-          {/* logo */}
-          <Image source={require('../images/LogoOriginal.png')} style={styles.logo1} />
-          {/* logo end */}
+
+              <View style={{ height: 400, }}>
+                <ScrollView>
+                  <Image source={require('../images/LogoOriginal.png')} style={styles.logo1} />
+                  <Textfeild
+                    holder={"  Enter email..."}
+                    title={"Email"}
+                    mb={10}
+                    mt={25}
+                  />
+
+                  <Textfeild
+                    holder={"  Enter password..."}
+                    title={"Password"}
+                    mb={30}
+
+                  />
+
+                  <Darkb value={"LOGIN"} nav={handleSubmit} />
+
+                  <TouchableOpacity style={styles.button3}>
+                    <Text style={styles.Buttontxt}>CREATE ACCOUNT</Text>
+                  </TouchableOpacity>
+
+                </ScrollView>
+              </View>
 
 
-
-          {/* Email input */}
-          <View style={styles.emailinputcontainer}>
-            <Text style={styles.emailinputlable}>Email</Text>
-            <TextInput
-              placeholder=' Enter email...'
-              style={styles.emailinputtextfeild}
-              onChangeText={handleChange('email')}
-              onBlur={handleBlur('email')}
-              value={values.email}
-
-            />
+            </KeyboardAvoidingView>
           </View>
-          {(touched.email && errors.email) &&
-            <Text style={{ top: Dimensions.get('window').height * 0.28, left: 20, color: "red", }}>{errors.email}</Text>
-          }
-          {/* Email inupt end */}
-
-
-
-          {/* password input */}
-          <View style={styles.passwordinputcontainer}>
-            <Text style={styles.passwordinputlable}>Password</Text>
-            <TextInput
-              placeholder='  Enter Password...'
-              style={styles.passwordinputtextfeild}
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
-            />
-          </View>
-          {(touched.password && errors.password) &&
-            <Text style={{ top: Dimensions.get('window').height * 0.28, left: 20, color: "red" }}>{errors.password}</Text>
-          }
-          {/* password input end */}
-
-
-
-          <TouchableOpacity onPress={handleSubmit} style={styles.button1}>
-            <Text style={{ color: "white" }}>LOG IN</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={forgot} style={styles.button2}>
-            <Text style={{ color: '#C0C0C0' }}>FORGOT PASSWORD ?</Text>
-          </TouchableOpacity>
 
         </View>
-      )}
-    </Formik>
+
+
+
+
+
+
+
+      )
+      }
+    </Formik >
 
     // * container end * //
   );
@@ -213,120 +225,55 @@ export default function App({ navigation }) {
 
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  inner: {
+
+    flex: 1,
+
+    backgroundColor: "red"
+  },
   header: {
-    top: Dimensions.get('window').height * 0.04,
-    height: 50,
-    borderBottomWidth: 2,
-    borderBottomColor: "grey",
-    justifyContent: "center"
+    fontSize: 36,
+    marginBottom: 48
   },
-
-  headericon1: {
-    fontSize: 23,
-    fontWeight: "600",
-    left: 10,
-    top: 5,
-    color: "#133459",
+  textInput: {
+    height: 40,
+    borderColor: "#000000",
+    borderBottomWidth: 1,
 
   },
-  headertitle: {
-    alignSelf: "center",
-    fontSize: 25,
-    fontWeight: "250",
-    color: "#133459",
-    position: "absolute",
+  btnContainer: {
+    backgroundColor: "white",
 
   },
-
-  headericon2: {
-    fontSize: 25,
-    alignSelf: "flex-end",
-    right: 5,
-    color: "#133459",
-
-  },
-
   logo1: {
 
     width: Dimensions.get('window').width * 0.8,
     height: 60,
-    top: Dimensions.get('window').height * 0.23,
+
     resizeMode: 'stretch',
-    alignSelf: "center"
-  },
-
-  emailinputcontainer: {
-    top: Dimensions.get('window').height * 0.27,
-    position: "relative",
     alignSelf: "center",
-
+    top: 22,
+    marginBottom: 27
   },
 
-  emailinputlable: {
-    marginBottom: 8,
-    fontSize: 17,
-    color: "#133459",
-    fontWeight: "500"
-  },
-
-  emailinputtextfeild: {
-    height: 35,
-    width: Dimensions.get('window').width * 0.92,
-    borderWidth: 1.6,
-    borderRadius: 6,
-    borderColor: "#eaedf2"
-  },
-
-  passwordinputcontainer: {
-    top: Dimensions.get('window').height * 0.27,
-    position: "relative",
-    alignSelf: "center",
-    marginTop: 10
-  },
-
-  passwordinputlable: {
-    marginBottom: 8,
-    fontSize: 17,
-    color: "#133459",
-    fontWeight: "500"
-  },
-
-  passwordinputtextfeild: {
-    height: 35,
-    width: Dimensions.get('window').width * 0.92,
-    borderWidth: 1.6,
-    borderRadius: 6,
-    borderColor: "#eaedf2"
-  },
-
-  button1: {
+  button3: {
     width: Dimensions.get('window').width * 0.9,
     borderRadius: 9,
     height: 45,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#133459",
-    top: Dimensions.get('window').height * 0.32,
     alignSelf: "center",
-
-  },
-
-  button2: {
-    width: Dimensions.get('window').width * 0.9,
-    borderRadius: 9,
-    height: 45,
     alignItems: "center",
     justifyContent: "center",
     // marginTop: 40,
     borderWidth: 1,
-    borderColor: '#C0C0C0',
-    top: Dimensions.get('window').height * 0.33,
-    alignSelf: "center",
-
+    marginTop: 8
 
   }
 
-});
 
+});
 
 

@@ -119,13 +119,7 @@ Residential`}
 Residential`}
           />
 
-          <MyPropertyComponent
-            left={15}
-            w={Dimensions.get('window').width * 0.92}
-            BoxText={`SellerAgent Australia Avenue       Sydney Olympic Park, NSW 
-2127 Australia  
-Residential`}
-          />
+
         </View>
       </ScrollView >
     </View >

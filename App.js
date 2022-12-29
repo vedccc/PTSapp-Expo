@@ -8,10 +8,10 @@ import Top from './Components/Topbar'
 export default function App() {
   return (
 
-    // <GlobalVariableProvider>
-    //   <Navigator />
-    // </GlobalVariableProvider>
-    <Top title={'hi'} />
+    <GlobalVariableProvider>
+      <Navigator />
+    </GlobalVariableProvider>
+
   );
 
 }

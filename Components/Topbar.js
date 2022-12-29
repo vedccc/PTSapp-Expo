@@ -17,7 +17,7 @@ import {
 
 import Icon from 'react-native-vector-icons/AntDesign'
 import Iconfa from 'react-native-vector-icons/FontAwesome'
-
+import * as Font from "expo-font";
 export default function App(props) {
 
   return (
@@ -26,7 +26,7 @@ export default function App(props) {
 
       <TouchableOpacity onPress={props.onPress} style={{ color: "#133459", position: "absolute" }}><Icon name="left" style={{ fontSize: 23, fontWeight: "600", left: 10, color: "#133459" }} /></TouchableOpacity>
 
-      <Text style={{ fontSize: 25, fontWeight: "250", color: "#133459", alignSelf: "center" }} >{props.title}</Text>
+      <Text style={{ fontSize: 25, fontWeight: "250", color: "#133459", alignSelf: "center", fontFamily: 'MontserratMedium' }} >{props.title}</Text>
 
 
 
