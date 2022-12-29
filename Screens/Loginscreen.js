@@ -180,19 +180,31 @@ export default function App({ navigation }) {
               <View style={{ height: 400, }}>
                 <ScrollView>
                   <Image source={require('../images/LogoOriginal.png')} style={styles.logo1} />
+
                   <Textfeild
                     holder={"  Enter email..."}
                     title={"Email"}
                     mb={10}
                     mt={25}
+                    onChangeText={handleChange('email')}
+                    onBlur={handleBlur('email')}
+                    value={values.email}
                   />
+                  {(touched.email && errors.email) &&
+                    <Text style={{ left: 20, color: "red", marginBottom: 5 }}>{errors.email}</Text>
+                  }
 
                   <Textfeild
                     holder={"  Enter password..."}
                     title={"Password"}
                     mb={30}
-
+                    onChangeText={handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    value={values.password}
                   />
+                  {(touched.password && errors.password) &&
+                    <Text style={{ left: 20, color: "red", bottom: 20 }}>{errors.password}</Text>
+                  }
 
                   <Darkb value={"LOGIN"} nav={handleSubmit} />
 
